@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+html, body {
+  background: #f5f6f7;
+}
+li {
+  list-style: none;
+}
+input, button {
+  border: 0;
+  outline: 0;
+  background: 0;
+}
+button {
+  cursor: pointer;
+}
+
+/* the body */
+#wrap {
+
+}
+.date-wrap {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+}
+.year-wrap, .month {
+  font-size: 40px;
+}
+.days {
+  font-size: 80px;
+}
+.day-wrap {
+  font-size: 50px;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.contents-wrap {
+  width: 100vw;
+  text-align: center;
+  margin-top: 200px;
+}
+#text {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+}
+#text:focus {
+  outline: 0;
+}
+.edit {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  background: url(edit.png) no-repeat;
+  background-size: 100%;
+}
+.add-list {
+  background: #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.list-wrap ul li {
+  width: 300px;
+  text-align: left;
+  margin: auto;
+  margin-top: 10px; 
+}
+.check {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+}
+.check img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.list-wrap ul li span {
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}

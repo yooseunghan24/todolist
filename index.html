@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="wrap">
+    <div class="date-wrap">
+      <div>
+        <span class="year-wrap">
+          <span class="year"></span>.
+        </span>
+        <span class="month"></span>
+      </div>
+      <div>
+        <span class="days"></span>
+        <span class="day-wrap">
+          (<span class="day-of-week"></span>요일)
+        </span>
+      </div>
+    </div>
+     <!-- // date-wrap -->
+     <button type="button" class="edit"></button>
+     <main>
+       <div class="contents-wrap">
+        <input type="text" name="text" id="text" placeholder="내용을 입력하세요">
+        <button type="button" class="add-list">추가</button>
+        <div class="list-wrap">
+          <ul>
+          </ul>
+        </div>
+        <!-- // list-wrap -->
+      </div>
+     </main>
+  </div>
+  <!-- // wrap -->
+  <script src="index.js"></script>
+</body>
+</html>
