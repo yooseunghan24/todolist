@@ -18,18 +18,15 @@ const text = document.querySelector('#text');
 const addList = document.querySelector('.add-list');
 const list = document.querySelector('.list-wrap ul');
 
-addList.addEventListener('click', function() {
+addList.addEventListener('click', () => {
+  if(text.value === '') return;
   const li = document.createElement('li');
   const checkBtn = document.createElement('button');
-  const checkBtnClass = document.createAttribute('class');
   const checkBtnImg = document.createElement('img');
-  const checkBtnImgSrc = document.createAttribute('src');
   const liText = document.createElement('span');
   liText.textContent = text.value;
-  checkBtnClass.value = 'check';
-  checkBtnImgSrc.value = 'check.png';
-  checkBtnImg.setAttributeNode(checkBtnImgSrc);
-  checkBtn.setAttributeNode(checkBtnClass);
+  checkBtn.setAttribute('class', 'check');
+  checkBtnImg.setAttribute('src', 'check.png');
   checkBtn.appendChild(checkBtnImg);
   li.appendChild(checkBtn);
   li.appendChild(liText);
@@ -38,7 +35,7 @@ addList.addEventListener('click', function() {
   const img = document.querySelectorAll('img');
   check.forEach(function(ele, idx) {
     let checked = false;
-    ele.addEventListener('click', function() {
+    ele.addEventListener('click', () => {
       if(!checked) {
         img[idx].setAttribute('src', 'checked.png');
         checked = true;
@@ -46,6 +43,28 @@ addList.addEventListener('click', function() {
         img[idx].setAttribute('src', 'check.png');
         checked = false;
       }
+    })
+  })
+  const edit = document.querySelector('.edit');
+  const currentList = document.querySelectorAll('.list-wrap ul li')
+  for(let i of currentList) {
+    i.style.position = 'relative';
+  }
+  edit.addEventListener('click', () => {
+    const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('class', 'delete-btn');
+    deleteBtn.textContent = '삭제';
+    deleteBtn.style.position = 'absolute';
+    deleteBtn.style.right = 0;
+    for(let i of currentList) {
+      i.appendChild(deleteBtn);
+    }
+  })
+  const deleteButton = document.querySelectorAll('.delete-btn');
+  deleteButton.forEach((ele, idx) => {
+    let deleteSw = 0;
+    ele.addEventListener('click', () => {
+      
     })
   })
 })
