@@ -50,22 +50,31 @@ addList.addEventListener('click', () => {
   for(let i of currentList) {
     i.style.position = 'relative';
   }
+  let editClicked = false;
   edit.addEventListener('click', () => {
-    const deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute('class', 'delete-btn');
-    deleteBtn.textContent = '삭제';
-    deleteBtn.style.position = 'absolute';
-    deleteBtn.style.right = 0;
-    for(let i of currentList) {
-      i.appendChild(deleteBtn);
+    if (!editClicked) {
+      const deleteBtn = document.createElement('button');
+      deleteBtn.setAttribute('class', 'delete-btn');
+      deleteBtn.style.position = 'absolute';
+      deleteBtn.style.right = 0;
+      for(let i of currentList) {
+        i.appendChild(deleteBtn);
+      }
+      const deleteButton = document.querySelectorAll('.delete-btn');
+      deleteButton.forEach((ele, idx) => {
+        ele.addEventListener('click', () => {
+          currentList[idx].remove();
+        })
+      })
+      addList.disabled = true;
+      editClicked = true;
+    } else {
+      const deleteButton = document.querySelectorAll('.delete-btn');
+      for(let i of deleteButton) {
+        i.remove();
+      }
+      addList.disabled = false;
+      editClicked = false;
     }
   })
-  const deleteButton = document.querySelectorAll('.delete-btn');
-  deleteButton.forEach((ele, idx) => {
-    let deleteSw = 0;
-    ele.addEventListener('click', () => {
-      
-    })
-  })
 })
-
